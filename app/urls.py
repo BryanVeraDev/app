@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from task.views import TaskViewSet
+
 
 
 from rest_framework_simplejwt.views import (
@@ -25,6 +27,7 @@ from rest_framework_simplejwt.views import (
 )
 
 router = routers.DefaultRouter()
+router.register(r'tasks', TaskViewSet)
 #router.register(r'product-types', ProductTypeViewSet)
 
 urlpatterns = [
